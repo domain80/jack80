@@ -1,37 +1,61 @@
+"use client";
+
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
-import { Button } from "./ui/button";
 import { BiLogoLinkedinSquare, BiLogoDribbble, BiLogoGithub } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { useFooterStore } from "@/lib/State/footerStore";
 
-const Footer = (props: { linkName: string; linkUrl: string }) => {
+const Footer = (props: { linkName?: string; linkUrl?: string }) => {
+    const footerState = useFooterStore((state) => state.footer);
     return (
         <footer className="">
             <Link
-                href={props.linkUrl}
+                href={props.linkUrl ? props.linkUrl : footerState.linkUrl}
                 className="  flex gap-4 items-center text-gray-600">
-                <span>{props.linkName}</span>{" "}
+                <span>{props.linkName ? props.linkName : footerState.linkName}</span>{" "}
                 <MoveRight className="animate-shove stroke-[1.3]" />
             </Link>
-            <div className="flex mt-8 text-gray-500 text-xl gap-8">
-                <Link href={"https://linknedin.com/in/davidmainoo"}>
-                    <BiLogoLinkedinSquare />
-                </Link>
-                <Link href={"https://linknedin.com/in/davidmainoo"}>
-                    <BiLogoDribbble />
-                </Link>
-                <Link href={"https://linknedin.com/in/davidmainoo"}>
-                    <FaXTwitter />
-                </Link>
-                <Link href={"https://linknedin.com/in/davidmainoo"}>
-                    <BiLogoGithub />
-                </Link>
-                <Link href={"https://linknedin.com/in/davidmainoo"}>
-                    <MdEmail />
-                </Link>
+            <div className="flex mt-8 text-gray-500 text-xl gap-12">
+                <FooterSocialicon
+                    tooltip="LinkedIn"
+                    href=""
+                    content={<BiLogoLinkedinSquare />}
+                />
+                <FooterSocialicon
+                    tooltip="Dribbble"
+                    href=""
+                    content={<BiLogoDribbble />}
+                />
+                <FooterSocialicon
+                    tooltip="Twitter"
+                    href=""
+                    content={<FaXTwitter />}
+                />
+                <FooterSocialicon
+                    tooltip="GitHub"
+                    href=""
+                    content={<BiLogoGithub />}
+                />
+                <FooterSocialicon
+                    tooltip="Email"
+                    href=""
+                    content={<MdEmail />}
+                />
+            </div>
+            <div className="text-sm flex justify-between gap-8 text-gray-600 mt-2 font-medium">
+                <p className="">Proudly open source</p>
+                <p className="font-normal">
+                    Illustrations by{" "}
+                    <Link
+                        className="text-orange-600 hover:border-b border-spacing-1 border-current hover:font-medium transition-all"
+                        href="">
+                        Popsy
+                    </Link>
+                </p>
             </div>
         </footer>
     );
@@ -39,15 +63,15 @@ const Footer = (props: { linkName: string; linkUrl: string }) => {
 
 export default Footer;
 
-function FooterSocialicon() {
+function FooterSocialicon(props: { href: string; content: ReactNode; tooltip: string }) {
     return (
         <TooltipProvider>
             <Tooltip>
-                <TooltipTrigger asChild>
-                    <Button variant="outline">Hover</Button>
-                </TooltipTrigger>
+                <Link href={props.href}>
+                    <TooltipTrigger asChild>{props.content}</TooltipTrigger>
+                </Link>
                 <TooltipContent>
-                    <p>Add to library</p>
+                    <p>{props.tooltip}</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>

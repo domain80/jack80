@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
 import "./globals.css";
-
-const rubik = Rubik({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
     title: "David Mainoo",
@@ -12,8 +10,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`${rubik.className} bg-[url("/bg.svg")] bg-cover`}>
-                <div className="container max-w-screen-lg mx-auto">{children}</div>
+            <body className={`bg-[url("/bg.svg")] bg-cover`}>
+                <div className="container max-w-screen-lg mx-auto">
+                    <Navbar />
+                    <div className="mt-10 md:px-20 mb-20">{children}</div>
+                </div>
             </body>
         </html>
     );
