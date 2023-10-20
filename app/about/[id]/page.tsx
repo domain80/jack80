@@ -33,7 +33,7 @@ const AboutPage = ({ params }: { params: { id: number } }) => {
             </main>
 
             <Footer
-                linkName="More of me"
+                linkName={params.id < aboutData.length ? "More of me" : "Projects"}
                 linkUrl={
                     params.id < aboutData.length
                         ? `/about/${+params.id + 1}`

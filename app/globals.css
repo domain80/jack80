@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik.ttf");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Rubik";
+    src: url("../public/fonts/Rubik-Italic.ttf");
+    font-style: italic;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -72,6 +82,9 @@
     }
     body {
         @apply bg-background text-foreground;
+        font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif sans-serif;
     }
     @keyframes shove {
         0%,
@@ -86,5 +99,15 @@
     }
     .animate-shove {
         animation: shove 1s infinite;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply text-gray-600;
+    }
+    p {
+        @apply leading-7 text-gray-500;
     }
 }
