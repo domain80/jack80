@@ -12,14 +12,14 @@ import { useFooterStore } from "@/lib/State/footerStore";
 const Footer = (props: { linkName?: string; linkUrl?: string }) => {
     const footerState = useFooterStore((state) => state.footer);
     return (
-        <footer className="">
+        <footer className="dark:text-neutral-600">
             <Link
                 href={props.linkUrl ? props.linkUrl : footerState.linkUrl}
-                className="  flex gap-4 items-center text-gray-600">
+                className="  flex gap-4 items-center ">
                 <span>{props.linkName ? props.linkName : footerState.linkName}</span>{" "}
                 <MoveRight className="animate-shove stroke-[1.3]" />
             </Link>
-            <div className="flex mt-8 text-gray-500 text-xl gap-12">
+            <div className="flex mt-8  text-xl gap-12">
                 <FooterSocialicon
                     tooltip="LinkedIn"
                     href=""
@@ -46,10 +46,10 @@ const Footer = (props: { linkName?: string; linkUrl?: string }) => {
                     content={<MdEmail />}
                 />
             </div>
-            <div className="text-sm flex justify-between gap-8 text-gray-600 mt-2 font-medium">
+            <div className="text-sm flex justify-between gap-8  mt-6 font-medium">
                 <p className="">Proudly open source</p>
                 <p className="font-normal">
-                    Illustrations by{" "}
+                    Illustrations by{"  "}
                     <Link
                         className="text-orange-600 hover:border-b border-spacing-1 border-current hover:font-medium transition-all"
                         href="">
