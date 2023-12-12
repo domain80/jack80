@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { aboutData } from "@/lib/about-data";
 import { useAboutScoller } from "@/lib/State/aboutScrollStore";
 import Footer from "./Footer";
+import { cn } from "@/lib/utils";
 
 const About = () => {
     const scrollableRef = useRef<HTMLElement | any>();
@@ -28,7 +29,7 @@ const About = () => {
                                 <h3 className="text-2xl text-neutral-600 font-bold ">
                                     {data.title}
                                 </h3>
-                                <p className="mt-2 max-w-lg">{data.content}</p>
+                                <p className="mt-2 max-w-md">{data.content}</p>
                             </figcaption>
                         </figure>
                     ))}
@@ -37,11 +38,13 @@ const About = () => {
                     {aboutData.map((d, index) => {
                         return (
                             <button
-                                className={`w-2 h-2  bg-current dark:text-neutral-400 text-neutral-600 transition-colors border-2 border-current rounded-full ${
-                                    current == index
-                                        ? "dark:text-amber-500 text-orange-600"
-                                        : ""
-                                } `}
+                                className={cn(
+                                    `w-2 h-2  bg-current dark:text-neutral-400 text-neutral-600 transition-colors border-2 border-current rounded-full ${
+                                        current == index
+                                            ? "dark:text-amber-500 text-orange-600"
+                                            : ""
+                                    } `
+                                )}
                                 onClick={() => {
                                     updateCurrent(index);
                                     scrollableRef.current.scrollTo(
