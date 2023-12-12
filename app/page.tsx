@@ -19,7 +19,7 @@ export default function Home() {
             </main>
             <Footer
                 linkName="About me"
-                linkUrl="/about/1"
+                linkUrl="/about"
             />
         </div>
     );

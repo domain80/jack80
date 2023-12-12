@@ -111,12 +111,12 @@
         @apply leading-7 text-neutral-600 dark:text-neutral-400;
     }
     a {
-        @apply hover:text-orange-600 transition-colors;
+        @apply hover:text-orange-600 hover:dark:text-amber-500 transition-colors;
     }
 }
 
 .activeLink {
-    @apply text-orange-600 font-medium;
+    @apply dark:text-amber-500 text-orange-600 font-semibold;
 }
 
 .dark {

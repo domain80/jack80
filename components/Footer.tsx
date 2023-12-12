@@ -12,10 +12,10 @@ import { useFooterStore } from "@/lib/State/footerStore";
 const Footer = (props: { linkName?: string; linkUrl?: string }) => {
     const footerState = useFooterStore((state) => state.footer);
     return (
-        <footer className="dark:text-neutral-600">
+        <footer className="dark:text-neutral-400 text-neutral-600">
             <Link
                 href={props.linkUrl ? props.linkUrl : footerState.linkUrl}
-                className="  flex gap-4 items-center ">
+                className="w-max flex gap-4 items-center ">
                 <span>{props.linkName ? props.linkName : footerState.linkName}</span>{" "}
                 <MoveRight className="animate-shove stroke-[1.3]" />
             </Link>

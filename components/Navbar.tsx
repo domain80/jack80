@@ -34,7 +34,7 @@ export default function Navbar() {
     return (
         <nav className="mt-4 py-2 flex justify-between items-center text-neutral-600">
             <Link href={"/"}>
-                <Logo className="w-8 h-8 aspect-square fill-orange-500 stroke-gray-600 " />
+                <Logo className="w-8 h-8 aspect-square dark:fill-gray-200 fill-neutral-700  stroke-gray-600 " />
             </Link>{" "}
             <div className="md:hidden">
                 <DropdownMenu>
@@ -90,7 +90,7 @@ export default function Navbar() {
                                     {link.href == pathname ? (
                                         <motion.span
                                             layoutId="active_underline"
-                                            className="absolute left-0  top-full block h-[2px] rounded-full w-full bg-orange-700 mt-1"
+                                            className="absolute left-0  top-full block h-[2px] rounded-full w-full bg-[currentColor] mt-1"
                                         />
                                     ) : (
                                         <></>

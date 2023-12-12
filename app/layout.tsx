@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html
             lang="en"
             className="dark">
-            <body className={`dark:bg-neutral-900 `}>
+            <body className={`dark:bg-[#141f1d] bg-['/bg.jpg']`}>
                 <div className="container max-w-screen-lg mx-auto">
                     <Navbar />
                     <div className="mt-10 md:px-20 mb-20">{children}</div>

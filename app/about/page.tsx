@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Footer from "@/components/Footer";
-import { aboutData } from "@/lib/about-data";
-import { metadata } from "@/app/layout";
+import About from "@/components/About";
 
 const AboutPage = () => {
     return (
@@ -14,7 +12,7 @@ const AboutPage = () => {
                         Get to know me better... #whoami
                     </h4>
                 </header>
-                <>{/* about data */}</>
+                <About />
             </main>
         </>
     );
