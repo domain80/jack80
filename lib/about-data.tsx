@@ -10,7 +10,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import SvgDesigner from "@/components/illustrations/Designer";
 import SvgChefServingChicken from "@/components/illustrations/ChefServingChicken";
 import SvgHomeOffice from "@/components/illustrations/HomeOffice";
-import { Calculator } from "@/components/illustrations";
+import { Calculator, ManRidingARocket } from "@/components/illustrations";
 import SvgStudying from "@/components/illustrations/Studying";
 
 export const aboutData: {
@@ -65,5 +65,14 @@ export const aboutData: {
         // imageSrc: CalculatorImg,
         imageAlt: "Illustration of a calculator",
         illustration: Calculator,
+    },
+    {
+        pageTitle: "#! sudo",
+        title: "#! sudo",
+        content:
+            "Began distro hopping a while back and it has been a fun filled adventure. <br /> I use Arch by the way.",
+        // imageSrc: CalculatorImg,
+        imageAlt: "Illustration of a man riding a rocket",
+        illustration: ManRidingARocket,
     },
 ];

@@ -75,7 +75,7 @@ export default function Navbar() {
                 </DropdownMenu>
             </div>
             <div className="hidden md:flex gap-10 items-center">
-                <ul className="flex gap-10 items-center font-medium text-neutral-500 dark:text-neutral-400">
+                <ul className="flex gap-10 items-center font-medium  text-neutral-500 dark:text-neutral-400">
                     {navlinks.map((link, i) => {
                         return (
                             <li

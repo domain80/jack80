@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Bg from "@/components/bg";
 
 export const metadata: Metadata = {
     title: "David Mainoo",
@@ -23,8 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html
             lang="en"
-            className="dark">
-            <body className={`dark:bg-[#141f1d] bg-['/bg.jpg']`}>
+            className="">
+            <body className={`dark:bg-zinc-950 bg-[#fbf1c7] bg2-[#141f1d]  relative`}>
                 <div className="container max-w-screen-lg mx-auto">
                     <Navbar />
                     <div className="mt-10 md:px-20 mb-20">{children}</div>

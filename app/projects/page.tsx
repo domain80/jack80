@@ -12,8 +12,8 @@ const Page = () => {
     return (
         <main className=" ">
             <header className="">
-                <IdeaLaunch className="w-80 dark:text-neutral-300 text-neutral-800 -ml-8" />
-                <h2 className="text-4xl font-bold">Projects</h2>
+                <IdeaLaunch className="w-80 dark:text-neutral-300 text-neutral-800 -ml-8 z-10 " />
+                <h2 className="text-4xl font-bold ">Projects</h2>
                 <p>Ideas fleshed out into realities...</p>
                 <div className="mt-8 space-x-4">
                     <Toggle
